@@ -39,7 +39,9 @@ async def send_calories(message, state):
     await message.answer(f'Ваша норма калорий: {calories}')
     await state.finish()
 
-# 10 х вес (кг) + 6,25 x рост (см) – 5 х возраст (г) + 5;
+@dp.message_handler()
+async def all_message(message):
+    await message.answer("Пишите правильно!")
 
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
